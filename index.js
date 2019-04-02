@@ -45,12 +45,14 @@ T.post('media/upload', { media_data: image }, function (err, data, response) {
         var params = { media_ids: [mediaIdStr] }
    
         T.post('statuses/update', params, function (err, data, response) {
-          console.log(data)
+          console.log('Posted tweet, with this media_id: ' + mediaIdStr)
         })
       }
     })
   })
 });
 }
+
+postTweet();
 
 setInterval(postTweet, 1000 * 60 * 60)

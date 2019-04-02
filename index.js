@@ -18,7 +18,7 @@ const T = new Twit({
 
 function postTweet() {
 
-client.blogPosts('prettyasianbabes', {type: 'photo'}, async function(err, resp) {
+client.blogPosts('asianhotees', {type: 'photo'}, async function(err, resp) {
   let pics = resp.posts[Math.floor(Math.random()*resp.posts.length)].photos
 
 

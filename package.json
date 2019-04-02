@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "axios": "^0.18.0",
+    "image-to-base64": "^2.0.1",
+    "tumblr.js": "^2.0.0",
+    "twit": "^2.2.11"
+  },
+  "name": "fcafiles",
+  "version": "1.0.0",
+  "description": "Post cuties",
+  "main": "index.js",
+  "author": "kiru <kiru@waifu.club>",
+  "license": "MIT"
+}

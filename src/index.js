@@ -32,17 +32,19 @@ global.logger = logger;
 function postTweet() {
 	const offset = Math.floor(Math.random() * 399) + 1
 
-	client.blogPosts('world-asian', { type: 'photo', offset: offset }, async(err, resp) => {
+	client.blogPosts('shimojay', { type: 'photo', offset: offset }, async(err, resp) => {
 		if (err) return logger.error(err);
 
-		if (!resp.posts[Math.floor(Math.random() * resp.posts.length)].photos) return postTweet();
+		const post = resp.posts[Math.floor(Math.random() * resp.posts.length)]
 
-		let pics = resp.posts[Math.floor(Math.random() * resp.posts.length)].photos
+		if (!post.photos || post.tags.includes('boys') || post.tags.includes('couple') || post.tags.includes('love')) return postTweet();
 
-		// We select randomly an index from the colors array
+		let pics = post.photos
+
+		// We select randomly an index from the pics array
 		const index = Math.floor(pics.length * Math.random());
 
-		// We store the color to return
+		// We store the pic to return
 		pics = pics[index];
 
 		const buff = Buffer.from(pics.original_size.url);

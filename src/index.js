@@ -37,7 +37,7 @@ function postTweet() {
 
 		const post = resp.posts[Math.floor(Math.random() * resp.posts.length)]
 
-		if (!post.photos || post.tags.includes('boys') || post.tags.includes('couple') || post.tags.includes('love')) return postTweet();
+		if (!post || !post.photos || post.tags.includes('boys') || post.tags.includes('couple') || post.tags.includes('love')) return postTweet();
 
 		let pics = post.photos
 
